@@ -1,0 +1,20 @@
+{
+    "name": "yrllan/class-manager",
+    "description": "A class manager system made with PHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yrllanbrandao",
+            "email": "yrllanbrandao@outlook.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\" : "App/",
+            "MF\\" : "vendor/MF/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
