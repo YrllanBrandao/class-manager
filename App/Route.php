@@ -15,6 +15,16 @@
                 'controller' => 'indexController',
                 'action' => 'login'
             ];
+            $routes['register'] = [
+                'route' => '/register',
+                'controller' => 'userController',
+                'action' => 'register'
+            ];
+            $routes['registerUser'] = [
+                'route' => '/admin/register-user',
+                'controller' => 'userController',
+                'action' => 'saveUser'
+            ];
 
             $this -> setRoutes($routes);
         }

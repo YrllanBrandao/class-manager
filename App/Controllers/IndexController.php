@@ -12,8 +12,5 @@ namespace App\Controllers;
         public function login(){
            $this -> render('login');
         }
-        public function register(){
-            $this -> render('register');
-        }
         
     }

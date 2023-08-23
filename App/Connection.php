@@ -1,7 +1,8 @@
 <?php
 
 namespace App;
-use PDO;
+
+use \PDO;
 use Dotenv\Dotenv;
 
 
@@ -17,15 +18,9 @@ class Connection{
         $this -> password = $_ENV['DB_PASSWORD'];
 
     }
-    public static function getDatabase(){
+    public function getDatabase(){
+            $connection = new \PDO($this->dsn, $this->user, $this->password);
 
-       try{
-        $connection = new PDO($this -> dsn, $this -> user, $this -> password);
-
-        return $connection;
-       }
-       catch(PDOException $error){
-        
-       }
-    }
+            return $connection;
+     }
 }
