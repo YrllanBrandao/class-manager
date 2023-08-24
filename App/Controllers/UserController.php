@@ -12,22 +12,30 @@ class UserController extends Action
     {
         $this->render('register');
     }
-    public function saveUser()
-    {
-        $user = new UserModel;
-
-        $user->createUser();
-
-    }
     public function login()
     {
         $this->render('login');
+    }
+    public function home(){
+        $this -> render('home');
+    }
+    public function saveUser()
+    {
+        $user = new UserModel;
+        
+        $user->createUser();
+        
     }
     public function authenticateUser()
     {
         $user = new UserModel;
 
         $user->authenticateUser();
+    }
+    public function logout(){
+        $user = new UserModel;
+
+        $user -> logout();
     }
 
 }

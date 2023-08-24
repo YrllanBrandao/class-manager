@@ -5,10 +5,15 @@
  
     class Route extends Bootstrap{
         public function initRoutes(){
-            $routes['home'] = [
+            $routes['index'] = [
                 'route' => '/',
                 'controller' => 'indexController',
                 'action' => 'index'
+            ];
+            $routes['home'] = [
+                'route' => '/home',
+                'controller' => 'userController',
+                'action' => 'home'
             ];
             $routes['register'] = [
                 'route' => '/register',
@@ -29,6 +34,11 @@
                 'route' => '/authentication',
                 'controller' => 'userController',
                 'action' => 'authenticateUser'
+            ];
+            $routes['logout'] = [
+                'route' => '/logout',
+                'controller' => 'userController',
+                'action' => 'logout'
             ];
             $this -> setRoutes($routes);
         }

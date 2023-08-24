@@ -7,8 +7,8 @@ namespace App\Controllers;
 
     class IndexController extends  Action{        
         public function index(){
-            $this -> render('home');
+            $this -> render('index');
         }
-       
+        
         
     }

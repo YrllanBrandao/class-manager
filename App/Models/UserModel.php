@@ -74,7 +74,7 @@ class UserModel{
         {
             try{
                 $query = '
-                SELECT email, password FROM users WHERE email = :email
+                SELECT username, email, password FROM users WHERE email = :email
                 ';
                 $statement = $this -> connection -> prepare($query);
                 $statement -> bindParam(':email', $email);
@@ -85,7 +85,10 @@ class UserModel{
                 $samePassword = password_verify($password, $user['password']);
 
                 if($samePassword){
-                   
+
+                   $_SESSION['username'] = $user['username'];
+
+                   header("location: /home");
                 }
                 else{
                     header("location: /login?error=400");
@@ -98,5 +101,11 @@ class UserModel{
         else{
             header('location: /login?error=400');
         }
+    }
+
+    public function logout(){
+        session_destroy();
+        session_write_close();
+        header("location: /login");
     }
 }

@@ -10,7 +10,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
         <iconify-icon icon="arcticons:classroom" style="color: #19c37d;" width="50"></iconify-icon>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,32 +32,25 @@
     </div>
 </nav>
 
-<div class="container mt-5 flex-grow-1">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">Login</div>
-                <div class="card-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Nome de Usuário</label>
-                            <input type="text" class="form-control" id="username" placeholder="Digite seu nome de usuário">
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="password" placeholder="Digite sua senha">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+<div class="container mt-5 flex-grow-1 d-flex align-item-center">
+   <div class=" d-flex justify-content-center align-items-center row">
+    <div class="col-4 d-flex flex-column">
+    <p >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis perferendis expedita non quaerat ad laborum sint nesciunt eligendi ipsum laudantium. Dolores dignissimos tempore laborum voluptas libero molestiae consequatur, aliquid officia!
+        
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas a corrupti et commodi alias? Excepturi iste molestiae doloremque maxime vitae commodi, recusandae magni temporibus eum deserunt quidem officia labore autem unde error tempore eius. Explicabo tempora facere consequuntur sed minus?
+    </p>
+    <a href="/login" class="btn btn-success">Acessar</a>
     </div>
+    <img src="./image/index_01.svg" alt="" class="col-4 img-fluid">
+   </div>
 </div>
 
 <footer class="footer mt-auto py-3 bg-light">
     <div class="container">
-        <span class="text-muted">© 2023 Nome da Empresa. Todos os direitos reservados.</span>
+        <span class="text-muted">© 2023 Class Manager. Todos os direitos reservados.</span>
         <ul class="list-inline float-end mb-0">
             <li class="list-inline-item"><a href="#">Termos de Uso</a></li>
             <li class="list-inline-item"><a href="#">Política de Privacidade</a></li>
