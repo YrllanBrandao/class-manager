@@ -25,6 +25,13 @@
         $error = $_GET['error'];
 
         switch($error){
+            case 400:
+                ?>
+                    <div class="alert alert-warning">
+        Senha E/ou  E-mail invalido(s)!
+    </div>
+                <?php
+                break;
           case 411:
             ?>
     <div class="alert alert-warning">

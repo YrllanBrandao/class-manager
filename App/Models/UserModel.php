@@ -36,12 +36,14 @@ WHERE user_role.user_id = :id
         $unhashedPassword = $_POST['password'];
         $role = (int) $_POST['role'];
 
+        $emailRegex = '/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/';
+        
         $passwordLength = strlen($unhashedPassword);
         if($passwordLength < 8)
         {
             header("location: /register?error=411");
         }
-        else if(!empty($username) && !empty($email) && !empty($unhashedPassword) && !empty($role)){
+        else if(!empty($username) && !empty($email) && !empty($unhashedPassword) && !empty($role) && preg_match($emailRegex, $email)) {
            try{
             $hashedPassword = password_hash($unhashedPassword, PASSWORD_DEFAULT);
 
@@ -55,7 +57,25 @@ WHERE user_role.user_id = :id
             $statement -> bindParam(":password", $hashedPassword);
             $statement -> execute();
 
+            // retrieve the user data
+            $query = 'SELECT id from users where email = :email';
+            $statement = $this -> connection -> prepare($query);
+            $statement -> bindParam(":email", $email);
+            $statement -> execute();
+            $user = $statement -> fetch();
+            $userId = $user['id'];
 
+            
+            // register role
+            $query = 'INSERT INTO user_role(user_id, role_id) VALUES(:userId, :roleId)';
+            $statement = $this -> connection -> prepare($query);
+            $statement -> bindParam(":userId", $userId);
+            $statement -> bindParam(":roleId", $role);
+            $statement -> execute();
+         
+
+            header("location: /login?created=true");
+            
         
            }
            catch(PDOException $error){
