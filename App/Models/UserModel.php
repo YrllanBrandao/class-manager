@@ -13,7 +13,22 @@ class UserModel{
         $this -> connection =  $con -> getDatabase();
     }
     
+    private function getRole($id){
+             $query =   '
+        SELECT roles.*
+FROM user_role
+JOIN roles ON user_role.role_id = roles.id
+WHERE user_role.user_id = :id
+        ';
+        $statement = $this -> connection -> prepare($query);
+        $statement -> bindParam(":id", $id);
 
+        $statement -> execute();
+
+        $role = $statement -> fetch(PDO::FETCH_ASSOC);
+
+        return $role['name'];
+    }
     public function createUser(){
 
         $username = $_POST['username'];
@@ -74,7 +89,7 @@ class UserModel{
         {
             try{
                 $query = '
-                SELECT username, email, password FROM users WHERE email = :email
+                SELECT id, username, email, password FROM users WHERE email = :email
                 ';
                 $statement = $this -> connection -> prepare($query);
                 $statement -> bindParam(':email', $email);
@@ -85,8 +100,12 @@ class UserModel{
                 $samePassword = password_verify($password, $user['password']);
 
                 if($samePassword){
+                    $userId = $user['id'];
 
-                   $_SESSION['username'] = $user['username'];
+                    $role = $this -> getRole($userId);
+                  
+                    $_SESSION['username'] = $user['username'];
+                   $_SESSION['role'] = $role;
 
                    header("location: /home");
                 }
