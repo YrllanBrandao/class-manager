@@ -10,11 +10,6 @@
                 'controller' => 'indexController',
                 'action' => 'index'
             ];
-            $routes['login'] = [
-                'route' => '/login',
-                'controller' => 'indexController',
-                'action' => 'login'
-            ];
             $routes['register'] = [
                 'route' => '/register',
                 'controller' => 'userController',
@@ -25,7 +20,16 @@
                 'controller' => 'userController',
                 'action' => 'saveUser'
             ];
-
+            $routes['loginUser'] = [
+                'route' => '/login',
+                'controller' => 'userController',
+                'action' => 'login'
+            ];
+            $routes['authenticateUser'] = [
+                'route' => '/authentication',
+                'controller' => 'userController',
+                'action' => 'authenticateUser'
+            ];
             $this -> setRoutes($routes);
         }
       

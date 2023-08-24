@@ -9,8 +9,6 @@ namespace App\Controllers;
         public function index(){
             $this -> render('home');
         }
-        public function login(){
-           $this -> render('login');
-        }
+       
         
     }

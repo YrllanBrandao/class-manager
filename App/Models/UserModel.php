@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Connection;
+use \PDO;
 use \PDOException;
 
 class UserModel{
@@ -60,5 +61,42 @@ class UserModel{
             header("location: /register?error=400");
         }
 
+    }
+
+    public function AuthenticateUser(){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $passwordLength = strlen($password);
+        if($passwordLength < 8){
+            header('location: /login?error=411');
+        }
+        else if(!empty($email) && !empty($password))
+        {
+            try{
+                $query = '
+                SELECT email, password FROM users WHERE email = :email
+                ';
+                $statement = $this -> connection -> prepare($query);
+                $statement -> bindParam(':email', $email);
+                $statement -> execute();
+               
+                $user = $statement -> fetch(PDO::FETCH_ASSOC);
+
+                $samePassword = password_verify($password, $user['password']);
+
+                if($samePassword){
+                   
+                }
+                else{
+                    header("location: /login?error=400");
+                }
+            }
+            catch(PDOException  $error){
+                header('location: /login?error=500');
+            }
+        }
+        else{
+            header('location: /login?error=400');
+        }
     }
 }
