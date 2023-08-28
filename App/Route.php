@@ -3,6 +3,7 @@
     
     use MF\Init\Bootstrap;
     use App\Routes\UserRoute;
+    use App\Routes\IndexRoute;
     class Route extends Bootstrap{
         private static function mergeRoutes(){
             $mergedRoutes = [];
@@ -14,13 +15,12 @@
             return $mergedRoutes;
         }
         public function initRoutes(){
-            $indexRoutes['index'] = [
-                'route' => '/',
-                'controller' => 'indexController',
-                'action' => 'index'
-            ];
+            $indexRoutes = new IndexRoute;
             $userRoutes = new UserRoute;
-            $routes = self::mergeRoutes($userRoutes -> getRoutes(), $indexRoutes);
+            $routes = self::mergeRoutes(
+                $userRoutes -> getRoutes(), 
+                $indexRoutes -> getRoutes()
+             );
             $this -> setRoutes($routes);
         }
       
