@@ -40,7 +40,9 @@
     align-items: center;
     gap: 1rem;
 }
-.navbar-item.has-child > ul, ol{
+
+.navbar-item > ul, ol{
+    display: none;
     list-style: none;
 }
 
