@@ -27,10 +27,10 @@
         switch($error){
             case 400:
                 ?>
-                    <div class="alert alert-warning">
-        Senha E/ou  E-mail invalido(s)!
+    <div class="alert alert-warning">
+        Senha E/ou E-mail invalido(s)!
     </div>
-                <?php
+    <?php
                 break;
           case 411:
             ?>
