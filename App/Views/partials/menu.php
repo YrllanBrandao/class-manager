@@ -34,10 +34,12 @@
                 break;
             case 'admin':
                ?>
-                   <li class="navbar-item has-child">
+                   <li class="navbar-item has-child"  data-child="user-management">
+                       <span class="navbar-item-title">
                        <iconify-icon icon="fa:users" style="color: white;"></iconify-icon> Gerenciar usuários
-                       <ul>
-                           <li>Registrar usuário</li>
+                       </span>
+                       <ul id="user-management" class="navbar-item-child hidden" >
+                           <li><a href="/register"> <iconify-icon icon="mdi:register" style="color: white;" width="25"></iconify-icon> Registrar usuário</a></li>
                        </ul>
                    </li>
                    <li class="navbar-item"> <a href="/document-and-processes">

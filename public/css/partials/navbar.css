@@ -32,6 +32,7 @@
 .navbar-item{
     border-top: 1px solid transparent;
     transition: all .3s ease-in;
+    user-select: none;
 }
 .navbar a{
     color: #fff;
@@ -42,13 +43,40 @@
 }
 
 .navbar-item > ul, ol{
-    display: none;
+    width: 100%;
     list-style: none;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .navbar-item:hover{
     cursor: pointer;
     border-top: 1px solid #001021;
     background: #001a33;
 
+}
+.navbar-item > span{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.navbar-item.has-child{
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-item-child{
+    position: relative;
+    transform: translateX(0);
+}
+.navbar-item-child li a:hover{
+    color: rgb(187, 187, 187);
+    text-decoration: underline #fff;
+}
+.navbar-item-child.hidden{
+    position: absolute;
+    transform: translateX(-150%);
 }
