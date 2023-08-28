@@ -9,25 +9,35 @@ class Middeware{
         $logged = isset($_SESSION['role']);
         $this -> setLogged($logged);
     }
-    public static function handle(string $roleRequired){
-        $logged = isset($_SESSION['role']);
-
-        switch($role){
-            case 'student':
-
+    public function next(){
+    }
+    public static function handle(string $role){
+        
+        if($this -> getLogged())
+        {
+            switch($role){
+                case 'student':
+    
+                    return;
+                case 'admin':
+    
+                    return;
+    
+                case 'professor':
+    
+    
                 return;
-            case 'admin':
-
-                return;
-
-            case 'professor':
-
-            return;
-            default: 
-            header('Location: /login?error=403');
-            break;
-            ;
+                default: 
+                header('Location: /login?error=403');
+                break;
+                ;
+            }
+           
         }
+        else{
+            header('Location: /login?error=403');
+        }
+        
         
 
     }
