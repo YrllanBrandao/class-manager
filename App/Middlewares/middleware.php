@@ -17,19 +17,14 @@ class Middeware{
         {
             switch($role){
                 case 'student':
-    
-                    return;
+                    break;
                 case 'admin':
-    
-                    return;
-    
+                    break;
                 case 'professor':
-    
-    
-                return;
+                    break;
                 default: 
                 header('Location: /login?error=403');
-                break;
+                exit;
                 ;
             }
            
