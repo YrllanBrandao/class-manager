@@ -5,9 +5,8 @@
     abstract class Bootstrap{
 
         abstract protected function initRoutes();
-
+        abstract protected static function mergeRoutes();
         private $routes;
-
         public function __construct(){
             $this -> initRoutes();
             $this -> run($this -> getUrl());

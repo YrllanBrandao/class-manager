@@ -2,44 +2,25 @@
     namespace App;
     
     use MF\Init\Bootstrap;
- 
+    use App\Routes\UserRoute;
     class Route extends Bootstrap{
+        private static function mergeRoutes(){
+            $mergedRoutes = [];
+            $args = func_get_args();
+
+            foreach($args as $array){
+                $mergedRoutes += $array;
+            }
+            return $mergedRoutes;
+        }
         public function initRoutes(){
-            $routes['index'] = [
+            $indexRoutes['index'] = [
                 'route' => '/',
                 'controller' => 'indexController',
                 'action' => 'index'
             ];
-            $routes['home'] = [
-                'route' => '/home',
-                'controller' => 'userController',
-                'action' => 'home'
-            ];
-            $routes['register'] = [
-                'route' => '/register',
-                'controller' => 'userController',
-                'action' => 'register'
-            ];
-            $routes['registerUser'] = [
-                'route' => '/admin/register-user',
-                'controller' => 'userController',
-                'action' => 'saveUser'
-            ];
-            $routes['loginUser'] = [
-                'route' => '/login',
-                'controller' => 'userController',
-                'action' => 'login'
-            ];
-            $routes['authenticateUser'] = [
-                'route' => '/authentication',
-                'controller' => 'userController',
-                'action' => 'authenticateUser'
-            ];
-            $routes['logout'] = [
-                'route' => '/logout',
-                'controller' => 'userController',
-                'action' => 'logout'
-            ];
+            $userRoutes = new UserRoute;
+            $routes = self::mergeRoutes($userRoutes -> getRoutes(), $indexRoutes);
             $this -> setRoutes($routes);
         }
       
