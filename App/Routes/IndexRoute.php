@@ -1,13 +1,9 @@
 <?php
 
     namespace App\Routes;
-
-    class IndexRoute{
-        private $routes;
-
-        public function __construct(){
-            $this -> setRoutes();
-        }
+    use App\Routes\AbstractRoute;
+    class IndexRoute extends AbstractRoute{
+        private $routes; 
         public function setRoutes(){
             $routes['index'] = [
                 'route' => '/',

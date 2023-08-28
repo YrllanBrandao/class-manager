@@ -1,13 +1,9 @@
 <?php   
     namespace App\Routes;
 
+    use App\Routes\AbstractRoute;
 
-    class UserRoute{
-        private $routes;
-        function __construct(){
-            $this -> setRoutes();
-        }
-       
+    class UserRoute extends AbstractRoute{   
         public function setRoutes(){
             $routes['home'] = [
                 'route' => '/home',
