@@ -8,28 +8,38 @@
     height: 100vh;
 }
 
+.bg-gray{
+    background: #efeeee;
+}
+#form-register{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
 @media screen and (max-width: 767px){
-    .form-register{
+    .card{
         width: 80vw;
     }
 }
 @media screen and (min-width: 767px) and (max-width: 1024px){
-    .form-register{
+    .card{
         width: 50vw;
     }
 }
 @media screen and (min-width: 1025px) and (max-width: 1199px){
-    .form-register{
+    .card{
         width: 70vw;
     }
 }
 @media screen and (min-width: 1200px){
-    .form-register{
+    .card{
         width: 30vw;
     }
 }
 @media screen and (min-width: 1300px){
-    .form-register{
-        width: 22vw;
+    .card{
+        width: 30vw;
     }
 }

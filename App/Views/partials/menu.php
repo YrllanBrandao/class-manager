@@ -13,6 +13,7 @@
                        <iconify-icon icon="fa-solid:user" style="color: white;" width="30" height="30"></iconify-icon>
                        <?= $username ?> | <?= $role ?>
                    </li>
+                   <li class="navbar-item"><a href="/home"><iconify-icon icon="ion:home" style="color: white;" width="25"></iconify-icon>Início</a></li>
                    <?php
            switch($role){
             case 'student':

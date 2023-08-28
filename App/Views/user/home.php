@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Login</title>
+    <title>Página inicial</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/partials/index.css">
     <link rel="stylesheet" href="./css/user/home.css">
@@ -17,7 +17,7 @@
 
 
 <div class="container-fluid p-0 m-0 d-flex ">
-<?php include_once '../App/Views/partials/menu.php'?>
+<?php require_once '../App/Views/partials/menu.php'?>
 <div class="container-fluid vh-100 p-0 d-flex">
 <footer class="footer mt-auto py-3 bg-light">
     <div class="container-fluid">

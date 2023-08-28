@@ -17,6 +17,7 @@
 .navbar-item-header{
     padding: 1rem 0;
     background: #001a33;;
+    border-bottom: 3px solid #050505;
 }
 .navbar-list > li{
     width: 100%;
