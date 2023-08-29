@@ -36,15 +36,16 @@
             case 'admin':
                ?>
                    <li class="navbar-item has-child"  data-child="user-management">
-                       <span class="navbar-item-title">
-                       <iconify-icon icon="fa:users" style="color: white;"></iconify-icon> Gerenciar usuários
+                       <span class="navbar-item-title"> 
+                       <iconify-icon icon="fa:users" style="color: white;"  width="25"></iconify-icon> Gerenciar usuários
                        </span>
                        <ul id="user-management" class="navbar-item-child hidden" >
-                           <li><a href="/register"> <iconify-icon icon="mdi:register" style="color: white;" width="25"></iconify-icon> Registrar usuário</a></li>
+                           <li><a href="/admin/users"> <iconify-icon icon="gridicons:multiple-users" style="color: white;" width="25"></iconify-icon>Usuários</a></li>
+                           <li><a href="/register"> <iconify-icon icon="mdi:register" style="color: white;" width="20"></iconify-icon> Registrar usuário</a></li>
                        </ul>
                    </li>
                    <li class="navbar-item"> <a href="/document-and-processes">
-                           <iconify-icon icon="mdi:file-document" style="color: white;" width="25" height="25">
+                           <iconify-icon icon="mdi:file-document" style="color: white;" width="20">
                            </iconify-icon> Documentos/Processos
                        </a></li>
                    <li class="navbar-item">

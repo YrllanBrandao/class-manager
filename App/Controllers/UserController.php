@@ -37,5 +37,10 @@ class UserController extends Action
 
         $user -> logout();
     }
-
+    public function users(){
+        $user = new UserModel;
+        $users = $user -> getUsers();
+        $array_users = ['users' => $users];
+        $this->render('users', $array_users);
+    }
 }

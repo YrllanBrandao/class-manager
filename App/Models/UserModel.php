@@ -147,4 +147,20 @@ WHERE user_role.user_id = :id
         session_write_close();
         header("location: /login");
     }
+
+    public function getUsers(){
+      try{
+        $query = '
+        SELECT * FROM users
+        ';
+
+        $statement  = $this -> connection -> query($query);
+        $users = $statement -> fetchAll(PDO::FETCH_ASSOC);
+        return $users;
+      }
+      catch(PDOException $error){
+        echo $error;
+      }
+        
+    }
 }

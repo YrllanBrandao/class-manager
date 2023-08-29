@@ -73,9 +73,17 @@
     position: relative;
     transform: translateX(0);
 }
+.navbar-item-child {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.navbar-item-child li{
+    display: flex;
+    gap: 1rem;
+}
 .navbar-item-child li a:hover{
-    color: rgb(187, 187, 187);
-    text-decoration: underline #fff;
+    color: #b6b9bd;
 }
 .navbar-item-child.hidden{
     position: absolute;

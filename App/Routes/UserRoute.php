@@ -35,6 +35,11 @@
                 'controller' => 'userController',
                 'action' => 'logout'
             ];
+            $routes['users'] = [
+                'route' => '/admin/users',
+                'controller' => 'userController',
+                'action' => 'users'
+            ];
             $this -> routes = $routes;
         }
 
