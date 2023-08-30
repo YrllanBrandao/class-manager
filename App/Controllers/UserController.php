@@ -43,4 +43,10 @@ class UserController extends Action
         $array_users = ['users' => $users];
         $this->render('users', $array_users);
     }
+
+    public function deleteUser(){
+        $user = new UserModel;
+        $userId = (int) $_POST['userId'];
+        $user -> deleteUser($userId);
+    }
 }

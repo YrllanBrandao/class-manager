@@ -163,4 +163,34 @@ WHERE user_role.user_id = :id
       }
         
     }
+
+    public function deleteUser(int $userId){
+        try{
+            $sql = '
+            DELETE FROM user_role where user_id = :id
+            ';
+            $statement = $this -> connection -> prepare($sql);
+
+            $statement -> bindParam(':id', $userId);
+
+            $statement -> execute();
+
+            $sql = '
+            DELETE FROM users where id = :id
+            ';
+            $statement = $this -> connection -> prepare($sql);
+
+            $statement -> bindParam(':id', $userId);
+
+            $statement -> execute();
+
+
+            header("Location: /admin/users?status=200");
+
+        }
+        catch(PDOException $error){
+            
+            header("Location: /admin/users?status=500");
+        }
+    }
 }

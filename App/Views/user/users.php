@@ -35,7 +35,7 @@ $role = $_SESSION['role'];
                     <th>
                         E-mail
                     </th>
-                    <th>
+                    <th class="text-center">
                         Ações
                     </th>
                 </thead>
@@ -47,9 +47,17 @@ $role = $_SESSION['role'];
                             <td><?= $user['id'] ?></td>
                             <td><?= $user['username'] ?></td>
                             <td><?= $user['email'] ?></td>
-                            <td>
-                                <a href="#" class="btn btn-primary"><iconify-icon icon="fa-solid:user-edit" style="color: white;" width="25"></iconify-icon></a>
-                                <a href="#" class="btn btn-danger"><iconify-icon icon="fa-solid:user-times" style="color: white;" width="25"></iconify-icon></a>
+                            <td class="d-flex gap-1" >
+                            <form action="/admin/user/update" method="post" >
+                                <input type="hidden" name="userId">
+                                <button type="submit" class="btn btn-primary"><iconify-icon icon="fa-solid:user-edit" style="color: white;" width="25"></iconify-icon></button>
+                                </form>
+                                <form action="/admin/user/delete" method="post" class="form-delete">
+                                    <input type="hidden" name="userId" value="<?= $user['id']?>">
+                                    <input type="hidden" name="username" value="<?= $user['username']?>" class="username">
+                                <button type="submit"  class="btn btn-danger"><iconify-icon icon="fa-solid:user-times" style="color: white;" width="25"></iconify-icon></button>
+
+                                </form>
 
                             </td>
 
@@ -79,5 +87,6 @@ $role = $_SESSION['role'];
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../js/user/partials/navbar.js"></script>
+<script src="../js/user/users.js"></script>
 </body>
 </html>

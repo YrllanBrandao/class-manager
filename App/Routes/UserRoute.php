@@ -40,6 +40,11 @@
                 'controller' => 'userController',
                 'action' => 'users'
             ];
+            $routes['deleteUser'] = [
+                'route' => '/admin/user/delete',
+                'controller' => 'userController',
+                'action' => 'deleteUser'
+            ];
             $this -> routes = $routes;
         }
 
