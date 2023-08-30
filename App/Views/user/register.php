@@ -64,7 +64,8 @@
                         </div>
 
                         <div class="row px-3">
-                        <select name="role" id="role" class="form-control  ">
+                            <label for="role" class="form-label">Cargo</label>
+                        <select name="role" id="role" class="form-control">
                                 <option value="1">Administrador</option>
                                 <option value="2">Aluno</option>
                                 <option value="3">Professor</option>
