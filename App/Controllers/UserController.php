@@ -44,6 +44,28 @@ class UserController extends Action
         $this->render('users', $array_users);
     }
 
+    public function saveUpdate(){
+        $user = new UserModel;
+
+        
+        $userData = [
+            'id' => (int) $_POST['userId'],
+            'email' =>  $_POST['email'],
+            'username' =>  $_POST['username'],
+            'role' =>  $_POST['role'],
+        ];
+
+        $user -> updateUser($userData);
+    }
+    public function update(){
+        $user = new UserModel;
+        $userId = (int) $_POST['userId'];
+
+        $userData = $user -> getUser($userId);
+
+        $this -> render('update', $userData);
+    }
+
     public function deleteUser(){
         $user = new UserModel;
         $userId = (int) $_POST['userId'];

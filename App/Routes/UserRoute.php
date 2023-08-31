@@ -40,6 +40,16 @@
                 'controller' => 'userController',
                 'action' => 'users'
             ];
+            $routes['update'] = [
+                'route' => '/admin/user/update',
+                'controller' => 'userController',
+                'action' => 'update'
+            ];
+            $routes['saveUpdate'] = [
+                'route' => '/admin/user/save-update',
+                'controller' => 'userController',
+                'action' => 'saveUpdate'
+            ];
             $routes['deleteUser'] = [
                 'route' => '/admin/user/delete',
                 'controller' => 'userController',

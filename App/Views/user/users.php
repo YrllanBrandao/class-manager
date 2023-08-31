@@ -21,7 +21,7 @@ $role = $_SESSION['role'];
 <div class="container-fluid vh-100 p-0 d-flex flex-column">
 <div class="card m-auto">
         <div class="card-header">
-            <h1 class="fs-5">Lista usuários</h1>
+            <h1 class="fs-5 text-center">Lista usuários</h1>
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -49,7 +49,7 @@ $role = $_SESSION['role'];
                             <td><?= $user['email'] ?></td>
                             <td class="d-flex gap-1" >
                             <form action="/admin/user/update" method="post" >
-                                <input type="hidden" name="userId">
+                                <input type="hidden" name="userId" value="<?= $user['id']?>" >
                                 <button type="submit" class="btn btn-primary"><iconify-icon icon="fa-solid:user-edit" style="color: white;" width="25"></iconify-icon></button>
                                 </form>
                                 <form action="/admin/user/delete" method="post" class="form-delete">

@@ -163,7 +163,42 @@ WHERE user_role.user_id = :id
       }
         
     }
+    public function getUser($userId){
+        $sql = '
+        SELECT  email, username, id FROM users WHERE id = ' . $userId;
+        $statement = $this -> connection ->  query($sql);
 
+        $user = $statement -> fetch(PDO::FETCH_ASSOC);
+        return $user;
+
+    }
+    public function  updateUser(array $user){
+
+        // updating user role
+        $sqlRoleUpdate = '
+        UPDATE user_role SET role_id = :roleId WHERE user_id = :userId
+        ';
+
+       
+        $statement = $this -> connection -> prepare($sqlRoleUpdate);
+        $statement -> bindParam(":roleId", $user['role']);
+        $statement -> bindParam(":userId", $user['id']);
+
+        $statement -> execute();
+        // updating user
+        $sqlUser = '
+        UPDATE users SET username = :username, email = :email WHERE id = :userId
+        ';
+        $statement = $this -> connection -> prepare($sqlUser);
+        $statement -> bindParam(":email",  $user['email']);
+        $statement -> bindParam(":username",  $user['username']);
+        $statement -> bindParam(":userId", $user['id']);
+
+        $statement -> execute();
+
+        header("Location: /home?status=200&message=usuário%20atualizado!");
+
+    }
     public function deleteUser(int $userId){
         try{
             $sql = '
