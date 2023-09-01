@@ -1,9 +1,17 @@
+:root{
+    --bg-color: #001021;
+    --li-hover-color: #3786DB;
+    --li-hover-exit: #DB3C37;
+}
+a {
+    text-decoration: none;
+}
 .navbar{
     width: 20vw;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background: #001021;
+    background: var(--bg-color);
     color: #fff;
     padding: 0;
     
@@ -19,6 +27,8 @@
     background: #001a33;;
     border-bottom: 3px solid #050505;
 }
+
+
 .navbar-list > li{
     width: 100%;
     padding: 1rem;
@@ -29,8 +39,11 @@
 }
 .navbar-list > :last-child{
     margin-top: auto;
+
 }
+
 .navbar-item{
+    cursor: pointer;
     border-top: 1px solid transparent;
     transition: all .3s ease-in;
     user-select: none;
@@ -49,26 +62,41 @@
     display: flex;
     flex-direction: column;
 }
-
-
-.navbar-item:hover{
-    cursor: pointer;
-    border-top: 1px solid #001021;
-    background: #001a33;
-
+.navbar-item:hover {
+    color: var(--li-hover-color) !important;
 }
+.navbar-item:hover > a{
+    color: var(--li-hover-color) !important;
+}
+.navbar-item:hover iconify-icon{
+    cursor: pointer;
+    color: var(--li-hover-color) !important;
+}
+.navbar-item:hover span{
+    color: var(--li-hover-color) !important;
+}
+
 .navbar-item > span{
     width: 100%;
     display: flex;
     gap: 1rem;
     align-items: center;
+    
 }
-
+/* child list */
 .navbar-item.has-child{
     flex-direction: column;
     align-items: center;
 }
-
+.navbar-item.has-child.active{
+    color: var(--li-hover-color) !important;
+}
+.navbar-item.has-child.active   iconify-icon{
+    color: var(--li-hover-color) !important;
+}
+.navbar-item.has-child.active:hover >  span {
+    color: var(--li-hover-color) !important;
+}
 .navbar-item-child{
     position: relative;
     transform: translateX(0);
@@ -81,11 +109,22 @@
 .navbar-item-child li{
     display: flex;
     gap: 1rem;
+    justify-content: start;
 }
 .navbar-item-child li a:hover{
-    color: #b6b9bd;
+    color: var(--li-hover-color);
 }
 .navbar-item-child.hidden{
     position: absolute;
     transform: translateX(-150%);
+}
+
+
+
+/* end navbar */
+.li-exit:hover > a > iconify-icon{
+    color: var(--li-hover-exit) !important;
+}
+.li-exit:hover  a{
+    color: var(--li-hover-exit) !important;
 }

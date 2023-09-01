@@ -40,8 +40,9 @@
                        <iconify-icon icon="fa:users" style="color: white;"  width="25"></iconify-icon> Gerenciar usuários
                        </span>
                        <ul id="user-management" class="navbar-item-child hidden" >
-                           <li><a href="/admin/users"> <iconify-icon icon="gridicons:multiple-users" style="color: white;" width="25"></iconify-icon>Usuários</a></li>
-                           <li><a href="/register"> <iconify-icon icon="mdi:register" style="color: white;" width="20"></iconify-icon> Registrar usuário</a></li>
+                           <li><a href="/admin/users">Usuários</a></li>
+                           <li><a href="/register">Registrar usuário</a></li>
+                           <li><a href="/register">Registrar cargo</a></li>
                        </ul>
                    </li>
                    <li class="navbar-item"> <a href="/document-and-processes">
@@ -59,11 +60,23 @@
                    <?php
                 break;
             case 'professor':
+                ?>
+                    <li class="navbar-item has-child" data-child="teach-management">
+                       <span class="nav-item-title">
+                       <iconify-icon icon="fa-solid:chalkboard-teacher" style="color: white;" width="25" height="25">
+                       </iconify-icon> Ensino
+                       </span>
+                       <ul id="teach-management" class="navbar-item-child hidden" >
+                           <li><a href="/admin/users"> Minhas Turmas</a></li>
+                           <li><a href="/register">Enviar aviso</a></li>
+                       </ul>
+                   </li>
+                <?php
                 break;
          }
            
            ?>
-                   <li class="navbar-item"><a href="/logout" class="link link-light d-flex align-items-center gap-2">
+                   <li class="navbar-item li-exit"><a href="/logout" class="link link-light d-flex align-items-center gap-2">
                            <iconify-icon icon="ion:exit" style="color: #FFFFFF;" width="25" height="25"></iconify-icon>
                            Sair
                        </a></li>

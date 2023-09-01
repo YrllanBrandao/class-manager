@@ -31,9 +31,6 @@
 ?>
 
 <body class="d-flex flex-column min-vh-100">
-
-
-
     <div class="container-fluid p-0 m-0 d-flex ">
         <?php require_once '../App/Views/partials/menu.php'?>
         <div class="container-fluid vh-100 p-0 d-flex">

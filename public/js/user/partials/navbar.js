@@ -15,8 +15,11 @@ navbarItems.forEach(item => {
                 const isOpen = isOpened(child);
                 if (isOpen) {
                     hiddenChild(child);
+                    
+                    item.classList.add("active");
                 }
                 else {
+                    item.classList.remove("active");
                     showChild(child);
                 }
             }
