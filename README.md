@@ -1,6 +1,6 @@
 Class manager project
 
-Este projeto utiliza o projeto [PHP ROUTER](https://github.com/YrllanBrandao/php-router) como base para funcionar corretamente,  basta baixar o projeto e movê-lo para o diretório vendor e renomeá-lo como **MF**
+Este projeto utiliza o projeto [PHP ROUTER](https://github.com/YrllanBrandao/php-router) como base, para o projeto funcionar corretamente basta baixar o projeto e movê-lo para o diretório vendor e renomeá-lo como **MF**
 # Criação de usuários
 ![image](https://github.com/YrllanBrandao/class-manager/assets/77467410/04e3cbd9-95c3-4c2d-b947-b4c4ef5a71c4)
 
