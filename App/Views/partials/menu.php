@@ -42,7 +42,7 @@
                        <ul id="user-management" class="navbar-item-child hidden" >
                            <li><a href="/admin/users">Usuários</a></li>
                            <li><a href="/register">Registrar usuário</a></li>
-                           <li><a href="/register">Registrar cargo</a></li>
+                           <li><a href="/admin/role/create-role">Registrar cargo</a></li>
                        </ul>
                    </li>
                    <li class="navbar-item"> <a href="/document-and-processes">

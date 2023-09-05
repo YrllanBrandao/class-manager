@@ -10,7 +10,7 @@ class UserController extends Action
 
     public function register()
     {
-        $this->render('register');
+        $this->render('/admin/register');
     }
     public function login()
     {
@@ -41,7 +41,7 @@ class UserController extends Action
         $user = new UserModel;
         $users = $user -> getUsers();
         $array_users = ['users' => $users];
-        $this->render('users', $array_users);
+        $this->render('/admin/users', $array_users);
     }
 
     public function saveUpdate(){
@@ -70,5 +70,11 @@ class UserController extends Action
         $user = new UserModel;
         $userId = (int) $_POST['userId'];
         $user -> deleteUser($userId);
+    }
+
+    public function createRole(){
+        $user = new UserModel;
+
+        $this -> render("/admin/createRole");
     }
 }

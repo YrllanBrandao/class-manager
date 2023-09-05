@@ -35,6 +35,8 @@
                 'controller' => 'userController',
                 'action' => 'logout'
             ];
+        
+            // admin routes
             $routes['users'] = [
                 'route' => '/admin/users',
                 'controller' => 'userController',
@@ -54,6 +56,11 @@
                 'route' => '/admin/user/delete',
                 'controller' => 'userController',
                 'action' => 'deleteUser'
+            ];
+            $routes['createRole'] = [
+                'route' => '/admin/role/create-role',
+                'controller' => 'userController',
+                'action' => 'createRole'
             ];
             $this -> routes = $routes;
         }
