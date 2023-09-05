@@ -59,8 +59,13 @@
             ];
             $routes['createRole'] = [
                 'route' => '/admin/role/create-role',
-                'controller' => 'userController',
+                'controller' => 'roleController',
                 'action' => 'createRole'
+            ];
+            $routes['saveRole'] = [
+                'route' => '/admin/role/save-role',
+                'controller' => 'roleController',
+                'action' => 'saveRole'
             ];
             $this -> routes = $routes;
         }

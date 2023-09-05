@@ -72,9 +72,5 @@ class UserController extends Action
         $user -> deleteUser($userId);
     }
 
-    public function createRole(){
-        $user = new UserModel;
-
-        $this -> render("/admin/createRole");
-    }
+   
 }
