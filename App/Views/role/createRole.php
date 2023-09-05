@@ -18,21 +18,22 @@
 
 
     <?php
-        $error = $_GET['error'];
+        $status = $_GET['status'];
 
-        switch($error){
-          case 411:
+        switch($status){
+          case 201:
             ?>
-    <div class="alert alert-warning fixed-top">
-        Insira uma senha com no mínimo 8 digitos
+    <div class="alert alert-success  fixed-top  d-flex justify-content-between" id="success-role-alert">
+        Cargo registrado com sucesso!
+        <button class="btn-hidden-alert btn-close" data-alert="success-role-alert"></button>
     </div>
     <?php
             break;
 
-          case 409:
+          case 500:
             ?>
     <div class="alert alert-danger fixed-top">
-        E-mail já cadastrado!! &nbsp; <a href="#" class="link-dark fw-bolder"> fazer login</a>
+        Ocorreu um erro, tente novamente mais tarde!
     </div>
     <?php
             break;
@@ -47,13 +48,19 @@
                     <h1 class="text-center">Registrar Cargo</h1>
                 </div>
                 <div class="card-body">
-                    <form action="/admin/register-user" method="post" id="form-register" class="form-control"> 
+                    <form action="/admin/role/save-role" method="post" id="form-register" class="form-control"> 
 
                         <div class="row px-3">
                             <label for="role" class="form-label">Cargo</label>
-                            <input type="text" name="role" id="role" class="form-control"
-                                placeholder="Ex: aluno23" pattern="^[a-zA-Z0-9]{4,30}$"
+                            <input type="text" name="newRole" id="role" class="form-control"
+                                placeholder="Ex: aluno23" pattern="^[a-zA-Z0-9 ]{4,30}$"
                                 title="Apenas letra e números, mín. 4 caracteres | max: 30 caracteres" required>
+                        </div>
+                        <div class="row px-3">
+                            <label for="role" class="form-label">Cargo</label>
+                            <input type="text" name="description" id="description" class="form-control"
+                                placeholder="Ex: aluno é o mais baixo na hierarquia..." 
+                                title="Apenas letra e números, mín. 4 caracteres | max: 100 caracteres" required>
                         </div>
                         <div class="row px-3 mt-3">
                             <button type="submit" class="btn btn-primary">Registrar Cargo</button>
@@ -69,6 +76,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="../../js/user/partials/navbar.js"></script>
+    <script src="../../js/bootStrap.js"></script>
+
 </body>
 
 </html>
