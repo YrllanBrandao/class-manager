@@ -17,4 +17,10 @@ class RoleController extends Action
 
         $role -> saveRole();
     }
+    public function getRoles(){
+        $role = new RoleModel;
+        $roles = $role -> getAll();
+       
+        $this-> render('roles', ["roles" => $roles]);
+    }
 }

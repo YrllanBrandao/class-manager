@@ -46,4 +46,22 @@ class RoleModel{
            }
 
     }
+    public function getAll(){
+        try{
+            $connection = $this -> getConnection();
+
+            $sql = '
+            SELECT * FROM roles;
+            ';
+
+            $statement = $connection -> query($sql);
+            
+            $roles = $statement -> fetchAll();
+            return $roles;
+
+        }
+        catch(PDOException $error){
+            header("Location: /admin/roles&status=500");
+        }
+    }
 }
